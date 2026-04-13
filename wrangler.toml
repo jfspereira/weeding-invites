@@ -1,0 +1,12 @@
+name = "wedding-invites"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+pages_build_output_dir = ".output/public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "wedding-jb"
+database_id = "d493372e-05c0-42bb-9cd3-39a4f71beebf"
+migrations_dir = "server/db/migrations"
+
