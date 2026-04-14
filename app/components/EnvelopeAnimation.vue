@@ -89,7 +89,7 @@
           <p class="font-display text-champagne-500 tracking-[0.3em] uppercase text-xs mb-2">Convidados a celebrar</p>
           <h1 class="font-display text-3xl md:text-4xl text-stone-700 leading-snug">Jorge<br/><span class="text-champagne-400">&amp;</span><br/>Beatriz</h1>
           <div class="ornament my-4 w-3/4 text-champagne-300 text-xs tracking-widest">✦</div>
-          <p class="font-display text-stone-500 text-sm tracking-widest">19 · IX · MMXXVI</p>
+          <p class="font-display text-stone-500 text-sm tracking-widest">19 · 04 · 2026</p>
         </div>
       </div>
     </div>

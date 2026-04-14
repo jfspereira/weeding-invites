@@ -60,7 +60,7 @@
           Rua Júlio Dinis, 1000 · Porto, Portugal
         </p>
         <p class="font-display text-champagne-500 text-xl tracking-widest mb-10">
-          19 · IX · MMXXVI &nbsp;·&nbsp; 16:00h
+          19 · 04 · 2026 &nbsp;·&nbsp; 16:00h
         </p>
 
         <!-- OpenStreetMap embed -->
@@ -103,14 +103,6 @@
         </div>
 
         <div class="flex flex-col items-center gap-3">
-          <span class="text-3xl">🌹</span>
-          <h3 class="font-display text-xl text-stone-700">Código de Vestuário</h3>
-          <p class="font-body text-stone-500 text-sm leading-relaxed">
-            Traje formal.<br/>Tons claros são bem-vindos.
-          </p>
-        </div>
-
-        <div class="flex flex-col items-center gap-3">
           <span class="text-3xl">📅</span>
           <h3 class="font-display text-xl text-stone-700">Confirmação</h3>
           <p class="font-body text-stone-500 text-sm leading-relaxed">
@@ -144,7 +136,7 @@
     <!-- ── FOOTER ─────────────────────────────────────────────── -->
     <footer class="bg-stone-800 text-white/60 py-10 text-center">
       <p class="font-display text-2xl text-white mb-2">Jorge &amp; Beatriz</p>
-      <p class="font-body text-xs tracking-widest">19 · IX · MMXXVI · Porto</p>
+      <p class="font-body text-xs tracking-widest">19 · 04 · 2026 · Porto</p>
       <div class="ornament mt-6 w-32 mx-auto text-white/20 text-xs">✦</div>
     </footer>
 
