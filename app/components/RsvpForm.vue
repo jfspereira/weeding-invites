@@ -25,6 +25,32 @@
         <p class="font-display text-champagne-500 mt-4 text-sm tracking-widest">
           A vossa presença é o nosso maior presente.
         </p>
+
+        <!-- Add to Calendar — only for attending guests -->
+        <div v-if="wasAttending" class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            :href="googleCalendarUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-champagne-300 text-champagne-700 font-body text-xs tracking-widest uppercase rounded-full hover:bg-champagne-100 transition"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="1.5" />
+              <path d="M16 2v4M8 2v4M3 10h18" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Google Calendar
+          </a>
+          <button
+            type="button"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-champagne-300 text-champagne-700 font-body text-xs tracking-widest uppercase rounded-full hover:bg-champagne-100 transition"
+            @click="downloadIcs"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 3v13m0 0l-4-4m4 4l4-4M5 20h14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Guardar no calendário
+          </button>
+        </div>
       </div>
     </Transition>
 
@@ -70,34 +96,46 @@
         </button>
       </div>
 
-      <!-- Attendance -->
+      <!-- Attendance — pill toggle cards -->
       <div class="space-y-2">
         <label class="block font-display text-stone-600 text-lg tracking-wide">
           Confirmação
         </label>
         <div class="flex flex-col sm:flex-row gap-3">
-          <label class="flex items-center gap-3 cursor-pointer group">
-            <input
-              v-model="isAttending"
-              type="radio"
-              :value="true"
-              class="accent-champagne-500 w-4 h-4"
-            />
-            <span class="font-body text-sm text-stone-600 group-hover:text-stone-800 transition">
-              ✓ &nbsp;Confirmar presença
+          <button
+            type="button"
+            :class="[
+              'flex-1 flex items-center gap-3 px-4 py-3 rounded-lg border-2 font-body text-sm transition cursor-pointer text-left',
+              isAttending
+                ? 'border-champagne-400 bg-champagne-50 text-stone-700'
+                : 'border-stone-200 bg-white text-stone-400 hover:border-champagne-200',
+            ]"
+            @click="isAttending = true"
+          >
+            <span :class="['w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition', isAttending ? 'border-champagne-500 bg-champagne-500' : 'border-stone-300']">
+              <svg v-if="isAttending" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
             </span>
-          </label>
-          <label class="flex items-center gap-3 cursor-pointer group">
-            <input
-              v-model="isAttending"
-              type="radio"
-              :value="false"
-              class="accent-champagne-500 w-4 h-4"
-            />
-            <span class="font-body text-sm text-stone-500 group-hover:text-stone-800 transition">
-              ✗ &nbsp;Lamentavelmente não posso comparecer
+            Confirmar presença
+          </button>
+          <button
+            type="button"
+            :class="[
+              'flex-1 flex items-center gap-3 px-4 py-3 rounded-lg border-2 font-body text-sm transition cursor-pointer text-left',
+              !isAttending
+                ? 'border-stone-400 bg-stone-50 text-stone-600'
+                : 'border-stone-200 bg-white text-stone-400 hover:border-stone-300',
+            ]"
+            @click="isAttending = false"
+          >
+            <span :class="['w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition', !isAttending ? 'border-stone-500 bg-stone-500' : 'border-stone-300']">
+              <svg v-if="!isAttending" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </span>
-          </label>
+            Lamentavelmente não posso comparecer
+          </button>
         </div>
       </div>
 
@@ -142,24 +180,60 @@
         class="w-full py-4 px-8 bg-champagne-500 hover:bg-champagne-600 disabled:opacity-50 text-white font-display text-lg tracking-widest uppercase rounded transition duration-200 shadow-md hover:shadow-lg"
       >
         <span v-if="loading">A enviar…</span>
-        <span v-else>Confirmar</span>
+        <span v-else>Confirmar Presença</span>
       </button>
     </form>
   </div>
 </template>
 
 <script setup lang="ts">
-// RSVP deadline: 19 June 2026
 const DEADLINE = new Date('2026-06-19T23:59:59Z')
 const deadlinePassed = computed(() => new Date() > DEADLINE)
 
-const guestNames        = ref<string[]>([''])
-const isAttending       = ref<boolean>(true)
-const phoneNumber       = ref('')
+const guestNames          = ref<string[]>([''])
+const isAttending         = ref<boolean>(true)
+const phoneNumber         = ref('')
 const dietaryRestrictions = ref('')
-const loading           = ref(false)
-const errorMessage      = ref('')
-const successMessage    = ref('')
+const loading             = ref(false)
+const errorMessage        = ref('')
+const successMessage      = ref('')
+const wasAttending        = ref(false)
+
+const googleCalendarUrl = computed(() => {
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: 'Casamento Jorge & Beatriz',
+    dates: '20260919T150000Z/20260920T030000Z',
+    details: 'Aquário Eventos, R. da Estrada Velha, 4480-180 Árvore, Vila do Conde',
+    location: 'Aquário Eventos, Árvore, Vila do Conde',
+  })
+  return `https://calendar.google.com/calendar/render?${params.toString()}`
+})
+
+function downloadIcs() {
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Jorge & Beatriz//Wedding//PT',
+    'BEGIN:VEVENT',
+    'UID:wedding-jorge-beatriz-2026@invitation',
+    'DTSTART:20260919T150000Z',
+    'DTEND:20260920T030000Z',
+    'SUMMARY:Casamento Jorge & Beatriz',
+    'LOCATION:Aquário Eventos\\, R. da Estrada Velha\\, 4480-180 Árvore\\, Vila do Conde',
+    'DESCRIPTION:Celebração do casamento de Jorge e Beatriz.',
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\r\n')
+
+  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = 'casamento-jorge-beatriz.ics'
+  a.click()
+  URL.revokeObjectURL(url)
+}
 
 function addGuest() {
   guestNames.value.push('')
@@ -183,6 +257,7 @@ async function submitRsvp() {
         dietaryRestrictions: dietaryRestrictions.value,
       },
     })
+    wasAttending.value = isAttending.value
     successMessage.value = (data as { message: string }).message
   } catch (err: unknown) {
     const e = err as { data?: { message?: string } }
@@ -198,4 +273,3 @@ async function submitRsvp() {
 .fade-enter-active, .fade-leave-active { transition: opacity 0.6s ease; }
 .fade-enter-from, .fade-leave-to       { opacity: 0; }
 </style>
-

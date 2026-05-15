@@ -48,7 +48,7 @@ const photos = [
   { src: '/images/photo-2.jpg', alt: 'Jorge e Beatriz — Foto 2' },
   { src: '/images/photo-3.jpg', alt: 'Jorge e Beatriz — Foto 3' },
   { src: '/images/photo-4.jpg', alt: 'Jorge e Beatriz — Foto 4' },
-  { src: '/images/photo-5.png', alt: 'Jorge e Beatriz — Foto 5' },
+  { src: '/images/photo-5.jpg', alt: 'Jorge e Beatriz — Foto 5' },
 ]
 </script>
 

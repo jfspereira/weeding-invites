@@ -1,15 +1,21 @@
 <template>
   <div
     ref="sceneRef"
-    class="fixed inset-0 z-50 flex items-center justify-center bg-ivory cursor-pointer select-none"
+    class="fixed inset-0 z-50 flex items-center justify-center cursor-pointer select-none"
+    style="background: radial-gradient(ellipse at center, #fdfaf4 0%, #f0e8d8 100%);"
+    tabindex="0"
+    role="button"
+    aria-label="Abre o teu convite de casamento"
     @click="triggerOpen"
+    @keydown.enter="triggerOpen"
+    @keydown.space.prevent="triggerOpen"
   >
     <!-- Hint text -->
     <p
       ref="hintRef"
       class="absolute bottom-10 text-champagne-500 font-display text-lg tracking-widest uppercase opacity-80"
     >
-      Clique para abrir
+      Abre o teu convite
     </p>
 
     <!-- Envelope -->
@@ -58,16 +64,12 @@
           style="top: 28%; width: 72px; height: 72px;"
         >
           <svg viewBox="0 0 72 72" class="w-full h-full drop-shadow-lg">
-            <!-- Seal base -->
             <circle cx="36" cy="36" r="32" fill="#8B5E3C" />
-            <!-- Star burst edges -->
             <polygon
               points="36,4 39,26 52,14 42,30 64,28 46,38 64,48 42,46 52,58 39,46 36,68 33,46 20,58 30,46 8,48 26,38 8,28 30,30 20,14 33,26"
               fill="#7a5234"
             />
-            <!-- Inner circle -->
             <circle cx="36" cy="36" r="22" fill="none" stroke="#c9963a" stroke-width="1.5" />
-            <!-- Monogram -->
             <text
               x="36" y="41"
               text-anchor="middle"
@@ -83,13 +85,14 @@
         <!-- Invitation card (slides up) -->
         <div
           ref="cardRef"
-          class="absolute left-4 right-4 rounded-sm shadow-lg flex flex-col items-center justify-center py-8 px-6 text-center"
+          class="absolute left-4 right-4 rounded-sm shadow-lg flex flex-col items-center justify-center py-8 px-6 text-center border border-champagne-200"
           style="bottom: 4px; top: 4px; background:#fdfaf4; opacity:0; pointer-events:none;"
         >
           <p class="font-display text-champagne-500 tracking-[0.3em] uppercase text-xs mb-2">Convidados a celebrar</p>
           <h1 class="font-display text-3xl md:text-4xl text-stone-700 leading-snug">Jorge<br/><span class="text-champagne-400">&amp;</span><br/>Beatriz</h1>
           <div class="ornament my-4 w-3/4 text-champagne-300 text-xs tracking-widest">✦</div>
-          <p class="font-display text-stone-500 text-sm tracking-widest">19 · 04 · 2026</p>
+          <p class="font-display text-stone-500 text-sm tracking-widest">Aquário Eventos</p>
+          <p class="font-display text-champagne-500 text-xs tracking-widest mt-1">19 · 09 · 2026 · 16:00h</p>
         </div>
       </div>
     </div>
@@ -101,16 +104,15 @@ import { gsap } from 'gsap'
 
 const emit = defineEmits<{ opened: [] }>()
 
-const sceneRef  = ref<HTMLElement | null>(null)
+const sceneRef    = ref<HTMLElement | null>(null)
 const envelopeRef = ref<HTMLElement | null>(null)
-const flapRef   = ref<HTMLElement | null>(null)
-const sealRef   = ref<HTMLElement | null>(null)
-const cardRef   = ref<HTMLElement | null>(null)
-const hintRef   = ref<HTMLElement | null>(null)
+const flapRef     = ref<HTMLElement | null>(null)
+const sealRef     = ref<HTMLElement | null>(null)
+const cardRef     = ref<HTMLElement | null>(null)
+const hintRef     = ref<HTMLElement | null>(null)
 
 let hasTriggered = false
 
-// Pulse the hint text
 onMounted(() => {
   gsap.to(hintRef.value, {
     opacity: 0.3,
@@ -120,7 +122,6 @@ onMounted(() => {
     ease: 'sine.inOut',
   })
 
-  // Also listen for first scroll
   window.addEventListener('scroll', triggerOpen, { once: true })
   window.addEventListener('wheel',  triggerOpen, { once: true })
 })
@@ -153,7 +154,7 @@ function triggerOpen() {
     ease: 'back.in(2)',
   })
 
-  // 3. Flap opens (rotateX from 0 → -180)
+  // 3. Flap opens
   tl.to(flapRef.value, {
     rotateX: -180,
     duration: 0.9,
@@ -170,13 +171,24 @@ function triggerOpen() {
     pointerEvents: 'auto',
   }, '-=0.3')
 
-  // 5. Brief pause so user can read card, then entire scene fades out
+  // 5. Heartbeat — subtle scale pulse so the card feels alive
+  tl.to(cardRef.value, {
+    scale: 1.02,
+    duration: 0.2,
+    ease: 'power1.out',
+  })
+  tl.to(cardRef.value, {
+    scale: 1,
+    duration: 0.25,
+    ease: 'power1.inOut',
+  })
+
+  // 6. Pause so user can read card, then entire scene fades out
   tl.to(sceneRef.value, {
     opacity: 0,
     duration: 0.8,
     ease: 'power1.inOut',
-    delay: 1.1,
+    delay: 1.5,
   })
 }
 </script>
-
