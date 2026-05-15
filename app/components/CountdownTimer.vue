@@ -6,12 +6,12 @@
     </p>
 
     <!-- Live countdown -->
-    <div v-else class="flex gap-6 md:gap-10 justify-center">
+    <div v-else class="flex gap-3 sm:gap-6 md:gap-10 justify-center">
       <div v-for="unit in units" :key="unit.label" class="flex flex-col items-center">
-        <span class="font-display text-4xl md:text-6xl text-white tabular-nums leading-none drop-shadow">
+        <span class="font-display text-3xl sm:text-4xl md:text-6xl text-white tabular-nums leading-none drop-shadow">
           {{ unit.value }}
         </span>
-        <span class="font-body text-xs md:text-sm text-white/70 uppercase tracking-widest mt-2">
+        <span class="font-body text-[10px] sm:text-xs md:text-sm text-white/70 uppercase tracking-wider md:tracking-widest mt-2">
           {{ unit.label }}
         </span>
       </div>

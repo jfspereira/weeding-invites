@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
   if (new Date() > RSVP_DEADLINE) {
     throw createError({
       statusCode: 403,
-      message: 'O prazo de confirmação encerrou a 19 de Junho de 2026.',
+      message: 'O prazo de confirmação encerrou a 19 de Agosto de 2026.',
     })
   }
 

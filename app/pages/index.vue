@@ -64,18 +64,14 @@
           19 · 09 · 2026 &nbsp;·&nbsp; 16:00h
         </p>
 
-        <!-- OpenStreetMap embed -->
-        <div data-reveal data-reveal-delay="300" class="rounded-xl overflow-hidden shadow-xl border border-champagne-100">
+        <!-- Google maps embed -->
+        <div data-reveal data-reveal-delay="300" class="rounded-xl overflow-hidden shadow-xl border border-champagne-100" style="position:relative;padding-bottom:56.25%;height:0;">
           <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-8.7100%2C41.3550%2C-8.6800%2C41.3750&layer=mapnik&marker=41.3650%2C-8.6950"
-            width="100%"
-            height="380"
-            frameborder="0"
-            style="border:0"
-            allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.568816368254!2d-8.734014!3d41.339988600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2443f16ce424d9%3A0xc41b05ec29a8d986!2sAqu%C3%A1rio%20Eventos!5e0!3m2!1sen!2spt!4v1778879801302!5m2!1sen!2spt"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            allowfullscreen=""
             loading="lazy"
-            title="Localização do Aquário Eventos"
-            aria-label="Mapa do Aquário Eventos"
+            referrerpolicy="no-referrer-when-downgrade"
           />
         </div>
 
@@ -121,7 +117,7 @@
           <h3 class="font-display text-xl text-stone-700">Confirmação</h3>
           <p class="font-body text-stone-500 text-sm leading-relaxed">
             Por favor confirme a sua presença<br/>
-            até <strong class="text-stone-700">19 de Junho de 2026</strong>.
+            até <strong class="text-stone-700">19 de Agosto de 2026</strong>.
           </p>
         </div>
 
@@ -136,129 +132,134 @@
         </p>
         <div data-reveal data-reveal-delay="100" class="ornament mb-12 text-champagne-200 text-base">✦ &nbsp; ✦ &nbsp; ✦</div>
 
-        <!-- Timeline -->
-        <div class="relative">
-          <!-- Vertical center line -->
-          <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-champagne-200 hidden md:block" />
+        <!-- ── Mobile timeline (left-aligned, icon → text, connected line) ── -->
+        <div class="md:hidden text-left max-w-xs mx-auto">
+          <!-- Cerimónia -->
+          <div data-reveal class="flex gap-5 items-start">
+            <div class="flex flex-col items-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z" /></svg>
+              </div>
+              <div class="w-px flex-1 bg-champagne-200 my-1" />
+            </div>
+            <div class="pb-8 pt-1">
+              <p class="font-display text-xl text-stone-700">16:00</p>
+              <p class="font-body text-stone-500 text-sm">Cerimónia</p>
+            </div>
+          </div>
+          <!-- Aperitivos -->
+          <div data-reveal data-reveal-delay="100" class="flex gap-5 items-start">
+            <div class="flex flex-col items-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 3h8l-2 9H10L8 3zM10 12l-1 6m5-6l1 6M7 18h10" /></svg>
+              </div>
+              <div class="w-px flex-1 bg-champagne-200 my-1" />
+            </div>
+            <div class="pb-8 pt-1">
+              <p class="font-display text-xl text-stone-700">17:30</p>
+              <p class="font-body text-stone-500 text-sm">Aperitivos</p>
+            </div>
+          </div>
+          <!-- Jantar -->
+          <div data-reveal data-reveal-delay="200" class="flex gap-5 items-start">
+            <div class="flex flex-col items-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3v5a4 4 0 004 4v9M17 3v18M14 3a3 3 0 013 3v3h-3" /></svg>
+              </div>
+              <div class="w-px flex-1 bg-champagne-200 my-1" />
+            </div>
+            <div class="pb-8 pt-1">
+              <p class="font-display text-xl text-stone-700">20:00</p>
+              <p class="font-body text-stone-500 text-sm">Jantar</p>
+            </div>
+          </div>
+          <!-- Festa -->
+          <div data-reveal data-reveal-delay="300" class="flex gap-5 items-start">
+            <div class="flex flex-col items-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" stroke-width="1.5" /><circle cx="18" cy="16" r="3" stroke-width="1.5" /></svg>
+              </div>
+              <div class="w-px flex-1 bg-champagne-200 my-1" />
+            </div>
+            <div class="pb-8 pt-1">
+              <p class="font-display text-xl text-stone-700">23:00</p>
+              <p class="font-body text-stone-500 text-sm">Festa</p>
+            </div>
+          </div>
+          <!-- Encerramento — no connector line after last item -->
+          <div data-reveal data-reveal-delay="400" class="flex gap-5 items-start">
+            <div class="flex flex-col items-center flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" /></svg>
+              </div>
+            </div>
+            <div class="pt-1">
+              <p class="font-display text-xl text-stone-700">~04:00</p>
+              <p class="font-body text-stone-500 text-sm">Encerramento</p>
+            </div>
+          </div>
+        </div>
 
-          <div class="space-y-10 md:space-y-0">
+        <!-- ── Desktop timeline (alternating left / right) ── -->
+        <div class="hidden md:block relative">
+          <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-champagne-200" />
 
-            <!-- Cerimónia -->
-            <div data-reveal class="relative flex flex-col md:flex-row md:items-center md:gap-0">
-              <div class="md:w-1/2 md:pr-12 md:text-right flex flex-col items-center md:items-end gap-1 mb-3 md:mb-0">
+          <div>
+            <!-- Cerimónia — left -->
+            <div data-reveal class="relative flex items-center">
+              <div class="w-1/2 pr-12 text-right">
                 <p class="font-display text-2xl text-stone-700">16:00</p>
                 <p class="font-body text-stone-500 text-sm">Cerimónia</p>
               </div>
-              <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 items-center justify-center z-10">
-                <!-- Rings / heart icon -->
-                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-                </svg>
+              <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z" /></svg>
               </div>
-              <div class="md:w-1/2 md:pl-12 md:text-left hidden md:block" />
-              <!-- Mobile icon -->
-              <div class="flex md:hidden justify-center mb-2">
-                <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-                  </svg>
-                </div>
-              </div>
+              <div class="w-1/2 pl-12" />
             </div>
-
-            <!-- Aperitivos -->
-            <div data-reveal data-reveal-delay="100" class="relative flex flex-col md:flex-row md:items-center md:gap-0 md:pt-12">
-              <div class="md:w-1/2 md:pr-12 md:text-right hidden md:block" />
-              <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 items-center justify-center z-10">
-                <!-- Champagne glass icon -->
-                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 3h8l-2 9H10L8 3zM10 12l-1 6m5-6l1 6M7 18h10" />
-                </svg>
+            <!-- Aperitivos — right -->
+            <div data-reveal data-reveal-delay="100" class="relative flex items-center pt-12">
+              <div class="w-1/2 pr-12" />
+              <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 3h8l-2 9H10L8 3zM10 12l-1 6m5-6l1 6M7 18h10" /></svg>
               </div>
-              <div class="md:w-1/2 md:pl-12 md:text-left flex flex-col items-center md:items-start gap-1 mb-3 md:mb-0">
+              <div class="w-1/2 pl-12 text-left">
                 <p class="font-display text-2xl text-stone-700">17:30</p>
                 <p class="font-body text-stone-500 text-sm">Aperitivos</p>
               </div>
-              <!-- Mobile icon -->
-              <div class="flex md:hidden justify-center mb-2">
-                <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 3h8l-2 9H10L8 3zM10 12l-1 6m5-6l1 6M7 18h10" />
-                  </svg>
-                </div>
-              </div>
             </div>
-
-            <!-- Jantar -->
-            <div data-reveal data-reveal-delay="200" class="relative flex flex-col md:flex-row md:items-center md:gap-0 md:pt-12">
-              <div class="md:w-1/2 md:pr-12 md:text-right flex flex-col items-center md:items-end gap-1 mb-3 md:mb-0">
+            <!-- Jantar — left -->
+            <div data-reveal data-reveal-delay="200" class="relative flex items-center pt-12">
+              <div class="w-1/2 pr-12 text-right">
                 <p class="font-display text-2xl text-stone-700">20:00</p>
                 <p class="font-body text-stone-500 text-sm">Jantar</p>
               </div>
-              <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 items-center justify-center z-10">
-                <!-- Fork & knife icon -->
-                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3v5a4 4 0 004 4v9M17 3v18M14 3a3 3 0 013 3v3h-3" />
-                </svg>
+              <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3v5a4 4 0 004 4v9M17 3v18M14 3a3 3 0 013 3v3h-3" /></svg>
               </div>
-              <div class="md:w-1/2 md:pl-12 hidden md:block" />
-              <div class="flex md:hidden justify-center mb-2">
-                <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3v5a4 4 0 004 4v9M17 3v18M14 3a3 3 0 013 3v3h-3" />
-                  </svg>
-                </div>
-              </div>
+              <div class="w-1/2 pl-12" />
             </div>
-
-            <!-- Festa -->
-            <div data-reveal data-reveal-delay="300" class="relative flex flex-col md:flex-row md:items-center md:gap-0 md:pt-12">
-              <div class="md:w-1/2 md:pr-12 hidden md:block" />
-              <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 items-center justify-center z-10">
-                <!-- Music note icon -->
-                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 18V5l12-2v13" />
-                  <circle cx="6" cy="18" r="3" stroke-width="1.5" />
-                  <circle cx="18" cy="16" r="3" stroke-width="1.5" />
-                </svg>
+            <!-- Festa — right -->
+            <div data-reveal data-reveal-delay="300" class="relative flex items-center pt-12">
+              <div class="w-1/2 pr-12" />
+              <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" stroke-width="1.5" /><circle cx="18" cy="16" r="3" stroke-width="1.5" /></svg>
               </div>
-              <div class="md:w-1/2 md:pl-12 md:text-left flex flex-col items-center md:items-start gap-1 mb-3 md:mb-0">
+              <div class="w-1/2 pl-12 text-left">
                 <p class="font-display text-2xl text-stone-700">23:00</p>
                 <p class="font-body text-stone-500 text-sm">Festa</p>
               </div>
-              <div class="flex md:hidden justify-center mb-2">
-                <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 18V5l12-2v13" />
-                    <circle cx="6" cy="18" r="3" stroke-width="1.5" />
-                    <circle cx="18" cy="16" r="3" stroke-width="1.5" />
-                  </svg>
-                </div>
-              </div>
             </div>
-
-            <!-- Boa noite -->
-            <div data-reveal data-reveal-delay="400" class="relative flex flex-col md:flex-row md:items-center md:gap-0 md:pt-12">
-              <div class="md:w-1/2 md:pr-12 md:text-right flex flex-col items-center md:items-end gap-1 mb-3 md:mb-0">
+            <!-- Encerramento — left -->
+            <div data-reveal data-reveal-delay="400" class="relative flex items-center pt-12">
+              <div class="w-1/2 pr-12 text-right">
                 <p class="font-display text-2xl text-stone-700">~04:00</p>
-                <p class="font-body text-stone-500 text-sm">Boa noite</p>
+                <p class="font-body text-stone-500 text-sm">Encerramento</p>
               </div>
-              <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 items-center justify-center z-10">
-                <!-- Moon icon -->
-                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
-                </svg>
+              <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">
+                <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" /></svg>
               </div>
-              <div class="md:w-1/2 md:pl-12 hidden md:block" />
-              <div class="flex md:hidden justify-center mb-2">
-                <div class="w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-champagne-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
-                  </svg>
-                </div>
-              </div>
+              <div class="w-1/2 pl-12" />
             </div>
-
           </div>
         </div>
       </div>
@@ -275,7 +276,7 @@
           Confirme a sua Presença
         </h2>
         <p data-reveal data-reveal-delay="200" class="font-body text-stone-400 text-sm leading-relaxed">
-          Ficamos gratos pela sua confirmação até <strong>19 de Junho de 2026</strong>.<br/>
+          Ficamos gratos pela sua confirmação até <strong>19 de Agosto de 2026</strong>.<br/>
           A vossa companhia é o nosso maior presente.
         </p>
       </div>
@@ -287,7 +288,7 @@
     <footer class="bg-stone-800 text-white/60 py-10 text-center">
       <div class="ornament mb-8 max-w-xs mx-auto text-white/20 text-xs">✦ &nbsp; ✦ &nbsp; ✦</div>
       <p class="font-display text-2xl text-white mb-2">Jorge &amp; Beatriz</p>
-      <p class="font-body text-xs tracking-widest">19 · 09 · 2026 · Árvore</p>
+      <p class="font-body text-xs tracking-widest">19 · 09 · 2026 · Vila Do Conde</p>
       <div class="ornament mt-6 w-32 mx-auto text-white/20 text-xs">✦</div>
     </footer>
 

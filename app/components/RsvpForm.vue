@@ -8,7 +8,7 @@
     >
       <p class="font-display text-2xl text-stone-600 mb-2">Prazo encerrado</p>
       <p class="font-body text-stone-500 text-sm">
-        O prazo de confirmação de presença encerrou a 19 de Junho de 2026.<br/>
+        O prazo de confirmação de presença encerrou a 19 de Agosto de 2026.<br/>
         Para esclarecimentos, por favor contacte-nos directamente.
       </p>
     </div>
@@ -187,7 +187,7 @@
 </template>
 
 <script setup lang="ts">
-const DEADLINE = new Date('2026-06-19T23:59:59Z')
+const DEADLINE = new Date('2026-08-19T23:59:59Z')
 const deadlinePassed = computed(() => new Date() > DEADLINE)
 
 const guestNames          = ref<string[]>([''])
