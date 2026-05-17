@@ -27,7 +27,7 @@
           19 de Setembro de 2026
         </p>
         <p class="font-display text-champagne-300 text-lg md:text-xl tracking-[0.3em]">
-          16:00h
+          15:30h
         </p>
       </div>
 
@@ -61,7 +61,7 @@
           R. da Estrada Velha · 4480-180 Árvore, Vila do Conde
         </p>
         <p data-reveal data-reveal-delay="250" class="font-display text-champagne-500 text-xl tracking-widest mb-10">
-          19 · 09 · 2026 &nbsp;·&nbsp; 16:00h
+          19 · 09 · 2026 &nbsp;·&nbsp; 15:30h
         </p>
 
         <!-- Google maps embed -->
@@ -103,7 +103,7 @@
           </svg>
           <h3 class="font-display text-xl text-stone-700">Hora</h3>
           <p class="font-body text-stone-500 text-sm leading-relaxed">
-            A cerimónia começa às <strong class="text-stone-700">16:00h</strong>.<br/>
+            A cerimónia começa às <strong class="text-stone-700">15:30h</strong>.<br/>
             Pedimos pontualidade.
           </p>
         </div>
@@ -143,7 +143,7 @@
               <div class="w-px flex-1 bg-champagne-200 my-1" />
             </div>
             <div class="pb-8 pt-1">
-              <p class="font-display text-xl text-stone-700">16:00</p>
+              <p class="font-display text-xl text-stone-700">15:30</p>
               <p class="font-body text-stone-500 text-sm">Cerimónia</p>
             </div>
           </div>
@@ -208,7 +208,7 @@
             <!-- Cerimónia — left -->
             <div data-reveal class="relative flex items-center">
               <div class="w-1/2 pr-12 text-right">
-                <p class="font-display text-2xl text-stone-700">16:00</p>
+                <p class="font-display text-2xl text-stone-700">15:30</p>
                 <p class="font-body text-stone-500 text-sm">Cerimónia</p>
               </div>
               <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-champagne-300 flex items-center justify-center z-10">

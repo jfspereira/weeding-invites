@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang="ts">
-// Wedding date: 19 September 2026 at 16:00 Lisbon time (UTC+1 in September)
-const WEDDING = new Date('2026-09-19T16:00:00+01:00')
+// Wedding date: 19 September 2026 at 15:30 Lisbon time (UTC+1 in September)
+const WEDDING = new Date('2026-09-19T15:30:00+01:00')
 
 const days    = ref(0)
 const hours   = ref(0)
