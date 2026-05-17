@@ -217,7 +217,7 @@ function downloadIcs() {
     'PRODID:-//Jorge & Beatriz//Wedding//PT',
     'BEGIN:VEVENT',
     'UID:wedding-jorge-beatriz-2026@invitation',
-    'DTSTART:20260919T150000Z',
+    'DTSTART:20260919T143000Z',
     'DTEND:20260920T030000Z',
     'SUMMARY:Casamento Jorge & Beatriz',
     'LOCATION:Aquário Eventos\\, R. da Estrada Velha\\, 4480-180 Árvore\\, Vila do Conde',
