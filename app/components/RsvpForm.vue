@@ -203,7 +203,7 @@ const googleCalendarUrl = computed(() => {
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: 'Casamento Jorge & Beatriz',
-    dates: '20260919T150000Z/20260920T030000Z',
+    dates: '20260919T143000Z/20260920T030000Z',
     details: 'Aquário Eventos, R. da Estrada Velha, 4480-180 Árvore, Vila do Conde',
     location: 'Aquário Eventos, Árvore, Vila do Conde',
   })
