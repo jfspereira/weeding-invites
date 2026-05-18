@@ -203,7 +203,7 @@ const googleCalendarUrl = computed(() => {
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: 'Casamento Jorge & Beatriz',
-    dates: '20260919T143000Z/20260920T030000Z',
+    dates: '20260919T140000Z/20260920T030000Z',
     details: 'Aquário Eventos, R. da Estrada Velha, 4480-180 Árvore, Vila do Conde',
     location: 'Aquário Eventos, Árvore, Vila do Conde',
   })
@@ -217,7 +217,7 @@ function downloadIcs() {
     'PRODID:-//Jorge & Beatriz//Wedding//PT',
     'BEGIN:VEVENT',
     'UID:wedding-jorge-beatriz-2026@invitation',
-    'DTSTART:20260919T143000Z',
+    'DTSTART:20260919T140000Z',
     'DTEND:20260920T030000Z',
     'SUMMARY:Casamento Jorge & Beatriz',
     'LOCATION:Aquário Eventos\\, R. da Estrada Velha\\, 4480-180 Árvore\\, Vila do Conde',

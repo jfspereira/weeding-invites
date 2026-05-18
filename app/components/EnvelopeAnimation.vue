@@ -92,7 +92,7 @@
           <h1 class="font-display text-3xl md:text-4xl text-stone-700 leading-snug">Jorge<br/><span class="text-champagne-400">&amp;</span><br/>Beatriz</h1>
           <div class="ornament my-4 w-3/4 text-champagne-300 text-xs tracking-widest">✦</div>
           <p class="font-display text-stone-500 text-sm tracking-widest">Aquário Eventos</p>
-          <p class="font-display text-champagne-500 text-xs tracking-widest mt-1">19 · 09 · 2026 · 15:30h</p>
+          <p class="font-display text-champagne-500 text-xs tracking-widest mt-1">19 · 09 · 2026 · 15:00h</p>
         </div>
       </div>
     </div>
