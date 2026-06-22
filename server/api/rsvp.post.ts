@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { rsvpSubmissions } from '../db/schema'
 
 // RSVP closes on 19 June 2026
-const RSVP_DEADLINE = new Date('2026-06-19T23:59:59Z')
+const RSVP_DEADLINE = new Date('2026-08-19T23:59:59Z')
 
 const rsvpSchema = z.object({
   guestNames: z
